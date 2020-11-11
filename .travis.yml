@@ -125,6 +125,7 @@ matrix:
       -DJAEGERTRACING_PLUGIN=ON -DBUILD_TESTING=ON -DHUNTER_CONFIGURATION_TYPES=Release'"
 before_install:
 - eval "${MATRIX_EVAL}"
+- echo "CPU is- ${TRAVIS_CPU_ARCH}"
 - |
   if [ "${TRAVIS_CPU_ARCH}" = "aarch64" ]; then
     sudo snap install cmake --classic;
